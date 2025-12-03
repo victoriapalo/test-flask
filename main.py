@@ -5,6 +5,10 @@ import uvicorn
 
 app = FastAPI()
 
+@app.get("/")
+async def root():
+    return {"message": "Hello world from AWS Victoria"}
+
 class Item(BaseModel):
     text: str
     is_done: bool = False
